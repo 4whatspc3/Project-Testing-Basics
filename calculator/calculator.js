@@ -35,7 +35,18 @@ const calculator = {
 
         return a / b;
     },
-    multiply : (a, b) => a * b
+    multiply : (a, b) => {
+        
+        if(typeof a === "string" || typeof b === "string"){
+            let num1 = Number(a);
+
+            let num2 = Number(b);
+
+            return num1 * num2;
+        }
+
+        return a * b;
+    }
 }
 
 export default calculator;

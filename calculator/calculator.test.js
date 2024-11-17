@@ -137,3 +137,69 @@ describe('Division', () => {
         expect(calculator.divide()).toBe(NaN);
     });
 });
+
+describe('Multiplication', () => {
+    test('multiply(4, 2) is 8', () => {
+        expect(calculator.multiply(4, 2)).toBe(8);
+    });
+    
+    test('multiply(-1, 1) is -1', () => {
+        expect(calculator.multiply(-1, 1)).toBe(-1);
+    });
+
+    test('multiply(-1, 11) is 1', () => {
+        expect(calculator.multiply(-1, -1)).toBe(1);
+    });
+
+    test('multiply(1, 0) is 0', () => {
+        expect(calculator.multiply(1, 0)).toBe(0);
+    });
+
+    test('multiply(1, -0) is -0', () => {
+        expect(calculator.multiply(1, -0)).toBe(-0);
+    });
+
+    test('multiply(0, 0) is 0', () => {
+        expect(calculator.multiply(0, 0)).toBe(0);
+    });
+
+    test('multiply(0.1, 0.2) is close to 0.02', () => {
+        expect(calculator.multiply(0.1, 0.2)).toBeCloseTo(0.02);
+    });
+
+    test('multiply(2/5, 2/5) is close to 0.16', () => {
+        expect(calculator.multiply(2/5 , 2/5)).toBeCloseTo(0.16);
+    });
+
+    test('multiply("1", "2") is 2', () => {
+        expect(calculator.multiply("1", "2")).toBe(2);
+    })
+
+    test('multiply("1", 2) is 2', () => {
+        expect(calculator.multiply("1", 2)).toBe(2);
+    });
+
+    test('multiply("bee", "lion") is NaN', () => {
+        expect(calculator.multiply("bee", "lion")).toBe(NaN);
+    });
+
+    test('multiply("bee", 2) is NaN', () => {
+        expect(calculator.multiply("bee", 2)).toBe(NaN);
+    });
+
+    test('multiply(Infinity, 0) is NaN', () => {
+        expect(calculator.multiply(Infinity, 0)).toBe(NaN);
+    });
+
+    test('multiply(Infinity, Infinity) is Infinity', () => {
+        expect(calculator.multiply(Infinity, Infinity)).toBe(Infinity);
+    });
+
+    test('multiply(Infinity, 2) is Infinity', () => {
+        expect(calculator.multiply(Infinity, 2)).toBe(Infinity);
+    });
+
+    test('multiply() is NaN', () => {
+        expect(calculator.multiply()).toBe(NaN);
+    });
+});
